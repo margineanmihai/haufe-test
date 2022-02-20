@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  node-app:
+    build: .
+    ports:
+      - "3005:3005"
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    environment:
+      - PORT=3005    
+  mongo:
+    image: mongo
+    ports:
+      - 3006:27017
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME:mihai
+      - MONGO_INTITDB_ROOT_PASSWORD:admin
