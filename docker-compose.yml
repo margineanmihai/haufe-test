@@ -17,3 +17,8 @@ services:
     environment:
       - MONGO_INITDB_ROOT_USERNAME:mihai
       - MONGO_INTITDB_ROOT_PASSWORD:admin
+
+  nginx:
+    build: .
+    ports:
+      - 3007:80
